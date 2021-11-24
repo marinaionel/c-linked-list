@@ -44,7 +44,7 @@ Removes all nodes and cleans up memory for the linked list.
 \retval LIST_OK The list is detroyed.
 \retval LIST_NULL The list pointer must not be NULL.
 */
-list_ReturnCode_t list_destroy(list_t self);
+list_ReturnCode_t list_destroy(list_t* self);
 
 /* ======================================================================================================================= */
 /**

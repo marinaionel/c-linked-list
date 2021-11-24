@@ -33,10 +33,10 @@ list_t list_create() {
 	return _list;
 }
 
-list_ReturnCode_t list_destroy(list_t self) {
-	if (NULL == self) return LIST_NULL;
+list_ReturnCode_t list_destroy(list_t* self) {
+	if (NULL == self || NULL == *self) return LIST_NULL;
 
-	node_t _root = (node_t)self->root;
+	node_t _root = (node_t)(*self)->root;
 
 	//a temporary variable which will store the next node after root in order to free the root at every iteration
 	node_t _tmp;
@@ -49,8 +49,8 @@ list_ReturnCode_t list_destroy(list_t self) {
 	}
 
 	//free the list itself
-	free(self);
-	self = NULL;
+	free(*self);
+	*self = NULL;
 	return LIST_OK;
 }
 
