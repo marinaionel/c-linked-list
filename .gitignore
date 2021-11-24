@@ -45,3 +45,5 @@ ipch/
 *.sln.iml
 UpgradeLog2.htm
 UpgradeLog.htm
+.idea/
+out/
